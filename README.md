@@ -1,11 +1,11 @@
-# ps-waver-picker
+# ps-wave-picker
 
 Created: 2026-09-10
 Language: MATLAB
 
 ## Overview
 
-`ps-waver-picker` is an interactive MATLAB tool for browsing waveform traces channel-by-channel and manually picking `P`-wave or `S`-wave arrivals.
+`ps-wave-picker` is an interactive MATLAB tool for browsing waveform traces channel-by-channel and manually picking `P`-wave or `S`-wave arrivals.
 
 The script:
 
@@ -17,7 +17,7 @@ The script:
 
 ## Supported waveform sources
 
-The script currently supports two input formats through the `waveform_source` setting in [src/main.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/main.m).
+The script currently supports two input formats through the `waveform_source` setting in [src/main.m](src/main.m).
 
 ### 1. `vallen`
 
@@ -29,7 +29,7 @@ Expected characteristics:
 - waveform samples start after a `[DATA]` line
 - each data row contains one sample across all channels
 
-Example configuration in [src/main.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/main.m):
+Example configuration in [src/main.m](src/main.m):
 
 ```matlab
 filename = 'vallen_export.csv';
@@ -46,7 +46,7 @@ Expected characteristics:
 - remaining columns are channel names such as `CH1`, `CH2`, `CH24`
 - each row contains one time sample and one amplitude value per listed channel
 
-Example configuration in [src/main.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/main.m):
+Example configuration in [src/main.m](src/main.m):
 
 ```matlab
 filename = 'signals_flow_0.csv';
@@ -57,11 +57,11 @@ waveform_source = 'flow';
 
 ### 1. Put the waveform file in `data/`
 
-Copy your source CSV into [data](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/data).
+Copy your source CSV into [data](data).
 
 ### 2. Set the file name and source type
 
-Open [src/main.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/main.m) and edit these two lines:
+Open [src/main.m](src/main.m) and edit these two lines:
 
 ```matlab
 filename = 'your_file.csv';
@@ -70,7 +70,7 @@ waveform_source = 'vallen';   % or 'flow'
 
 ### 3. Run the script
 
-Run [src/main.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/main.m) from MATLAB or from the MATLAB integration in VS Code.
+Run [src/main.m](src/main.m) from MATLAB or from the MATLAB integration in VS Code.
 
 The script will:
 
@@ -124,14 +124,14 @@ figures/<base_name>_ch<channelId>.png
 
 ## Project structure
 
-- [src/main.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/main.m): entrypoint script
-- [src/_functions/loadData.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/_functions/loadData.m): source-dispatched loader
-- [src/_functions/getWaveformSourceReader.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/_functions/getWaveformSourceReader.m): source reader registry
-- [src/_functions/getWaveformSourceCompiler.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/_functions/getWaveformSourceCompiler.m): source compiler registry
-- [src/_functions/getWaveformSourceProcessor.m](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/src/_functions/getWaveformSourceProcessor.m): source processor registry
+- [src/main.m](src/main.m): entrypoint script
+- [src/_functions/loadData.m](src/_functions/loadData.m): source-dispatched loader
+- [src/_functions/getWaveformSourceReader.m](src/_functions/getWaveformSourceReader.m): source reader registry
+- [src/_functions/getWaveformSourceCompiler.m](src/_functions/getWaveformSourceCompiler.m): source compiler registry
+- [src/_functions/getWaveformSourceProcessor.m](src/_functions/getWaveformSourceProcessor.m): source processor registry
 
 ## Notes
 
 - If `waveform_source` is omitted in `loadData`, the default is `vallen`.
-- The input file must exist in [data](/Users/martin/Documents/CODING_WORLD/matlab/ps-waver-picker/data).
+- The input file must exist in [data](data).
 - Unsupported source names will raise an error.

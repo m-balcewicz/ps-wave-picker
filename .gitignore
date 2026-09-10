@@ -17,6 +17,10 @@ slprj/
 
 # Local input/output data
 data/*
+!data/.gitkeep
+
 
 # Exported figures
 figures/*
+!figures/.gitkeep
+

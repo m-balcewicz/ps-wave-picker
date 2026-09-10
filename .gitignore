@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# VS Code and local tooling
+.vscode/
+.integrity/
+
+# MATLAB temporary and build artifacts
+*.asv
+*.m~
+*.autosave
+*.mlx.~*
+slprj/
+
+# Generated picks and MATLAB data exports
+*.mat
+
+# Local input/output data
+data/*
+
+# Exported figures
+figures/*
